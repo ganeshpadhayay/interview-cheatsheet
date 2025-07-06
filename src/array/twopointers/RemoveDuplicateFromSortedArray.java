@@ -61,6 +61,21 @@ public class RemoveDuplicateFromSortedArray {
         System.out.println("Output: " + k2 + ", nums = " + java.util.Arrays.toString(nums2));
     }
 
+    public static int removeDuplicates(int[] nums) {
+        if (nums.length == 0) {
+            return 0;
+        }
+
+        int k = 1; // Pointer for the position of unique elements
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] != nums[i - 1]) { // Check for unique elements
+                nums[k] = nums[i]; // Move unique element to the position tracked by k
+                k++;
+            }
+        }
+        return k; // Return the count of unique elements
+    }
+
     //this is accepted but very slow
     /*
     public static int removeDuplicates(int[] nums) {
@@ -76,19 +91,4 @@ public class RemoveDuplicateFromSortedArray {
         }
         return k;
     }*/
-
-    public static int removeDuplicates(int[] nums) {
-        if (nums.length == 0) {
-            return 0;
-        }
-
-        int k = 1; // Pointer for the position of unique elements
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[i] != nums[i - 1]) { // Check for unique elements
-                nums[k] = nums[i]; // Move unique element to the position tracked by k
-                k++;
-            }
-        }
-        return k; // Return the count of unique elements
-    }
 }

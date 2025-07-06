@@ -40,15 +40,6 @@ public class SquareOfSortedArray {
         System.out.println("Result for nums2: " + java.util.Arrays.toString(result2));
     }
 
-    //this is accepted but very slow
-    /*public int[] sortedSquares(int[] nums) {
-        for(int i = 0;i<nums.length;i++){
-            nums[i] = nums[i]*nums[i];
-        }
-        Arrays.sort(nums);
-        return nums;
-    }*/
-
     public int[] sortedSquares(int[] nums) {
         int n = nums.length;
         int[] result = new int[n];
@@ -71,4 +62,13 @@ public class SquareOfSortedArray {
 
         return result;
     }
+
+    //this is accepted but very slow
+    /*public int[] sortedSquares(int[] nums) {
+        for(int i = 0;i<nums.length;i++){
+            nums[i] = nums[i]*nums[i];
+        }
+        Arrays.sort(nums);
+        return nums;
+    }*/
 }
